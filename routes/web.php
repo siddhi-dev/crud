@@ -2,7 +2,12 @@
 
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
-use App\Models\crud;
+use App\Models\{
+    user,
+    crud,
+    role,
+    permission
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +21,8 @@ use App\Models\crud;
 */
 
 Route::get('/', function () {
+    $user = User::where('name', 'admin')->first();
+    dd($user);
     return view('login');
 });
 
