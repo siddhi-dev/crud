@@ -30,6 +30,45 @@ class userController extends Controller
         return view('login');
          
     }
+    // public function store(Request $request)
+    // {
+    //     // $request->validated();
+    
+    //     $data = $request->only('name', 'catagory', 'description');
+        
+    //     // Check if there are any files uploaded
+    //     if ($request->hasFile('images')) {
+    //         $images = [];
+    //         foreach ($request->file('images') as $image) {
+    //             $extension = $image->getClientOriginalExtension();
+    //             $filename = time() . '_' . uniqid() . '.' . $extension;
+    //             $path = $image->storeAs('public/files', $filename); // Store image in storage/app/public/files directory
+    //             $images[] = $filename; // Store the filename in an array
+    //         }
+    //         $data['images'] = json_encode($images); // Save all image filenames as JSON string
+    //     }
+    
+    //     $data['product_id'] = 123456;
+    //     $data['creator'] = Auth::guard('web')->id();
+        
+    //     $product = Product::create($data);
+    
+    //     if ($product) {
+    //         $response = [
+    //             'status' => 'ok',
+    //             'success' => true,
+    //             'message' => 'Record created successfully!'
+    //         ];
+    //     } else {
+    //         $response = [
+    //             'status' => 'error',
+    //             'success' => false,
+    //             'message' => 'Record creation failed!'
+    //         ];
+    //     }
+    
+    //     return redirect()->back()->with($response);
+    // }
     public function edit($id)  
 {  
  $crud= crud::find($id);  
